@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteDemo">
+	<test name="LoginTest">
+		<parameter name="browserName" value="Firefox" />
+		<parameter name="url" value="http://automationpractice.com/index.php" />
+		<classes>
+			<class name="com.hyt.tests.AutomationPracticeTest">
+				<methods>
+					<parameter name="userName" value="anand.lorzi@gmail.com" />
+					<parameter name="passWord" value="admin123" />
+					<include name="loginTest" />
+					<include name="VerifyLoginTest" />
+					<include name="logOutTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContactUsTest">
+		<parameter name="url" value="http://automationpractice.com/index.php" />
+		<classes>
+			<class name="com.hyt.tests.AutomationPracticeTest">
+				<methods>
+					<parameter name="userName" value="anand.lorzi@gmail.com" />
+					<parameter name="passWord" value="admin123" />
+					<include name="loginTest" />
+					<include name="NavigateToContactUsTest" />
+					<include name="logOutTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="SearchTest" enabled="true">
+		<classes>
+			<class name="com.hyt.tests.FirstTest">
+				<methods>
+					<include name="testGoogle" />
+					<include name="testBing" />
+					<include name="testFacebook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
